@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <link rel="icon" type="image/x-icon" href="imgs/favicon.png">
+ <meta http-equiv="Content-Language" content="it">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Brewy's website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <style>
+/* Hide the checkbox */
+    #mute-checkbox {
+        display: none;
+    }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #217DAE;
+            font-family: 'Open Sans', sans-serif; /* Changed font to Open Sans */
+            color: #FFFFFF;
+        }
+
+        #transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            z-index: 9999;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        #content {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #content.loaded {
+            opacity: 1;
+        }
+
+        #links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+    <div id="transition-overlay"></div>
+    <div id="content">
+        <p style="font-size: 56pt">:O</p>
+        <p>it Seems Like you've landed on Brewy's Website.</p>
+        <p>maybe adding a malwarewatch like server to make some downloads from me available. not soon tho</p>
+        <p>currently on version: STREAMSTUFF_0.0</p>
+        <p>proudly done with <b>Frontpage 2003</b>, <b>ChatGPT</b> and <b>&#10084;</b> From Brewy.</p>
+        <div id="links">
+            <a href="https://www.youtube.com/@BrewyStuff">Youtube</a>
+            <a href="https://www.tiktok.com/@sweet_k6anbegoniahype">TikTok</a>
+            <a href="https://discord.com/invite/WsUZez5C97">Discord</a>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("load", function () {
+            var overlay = document.getElementById('transition-overlay');
+            var content = document.getElementById('content');
+
+            setTimeout(function () {
+                overlay.style.opacity = 0;
+                overlay.style.pointerEvents = 'none';
+                content.classList.add('loaded');
+            }, 600);
+        });
+    </script>
+
+<audio id="audio" autoplay loop>
+    <source src="next.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- Checkbox to toggle mute/unmute -->
+<label for="mute-checkbox">Mute/Unmute</label>
+<input type="checkbox" id="mute-checkbox">
+
+<script>
+    const audio = document.getElementById('audio');
+    const muteCheckbox = document.getElementById('mute-checkbox');
+
+    // Function to toggle mute/unmute
+    function toggleMute() {
+        audio.muted = !audio.muted;
+    }
+
+    // Event listener for checkbox change
+    muteCheckbox.addEventListener('change', toggleMute);
+</script>
+
+</body>
+
+</html>
